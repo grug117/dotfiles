@@ -46,6 +46,10 @@ alias t="tree -a -I '.git|node_modules|.terraform'"
 alias gbda="git branch --merged | grep -v \* | xargs | xargs git branch -D"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
+dotfiles() {
+	git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" "$@"
+}
+
 # initialize and config virtualenvwrapper
 #export PATH="/usr/local/opt/python/libexec/bin:/usr/local/sbin:$PATH"
 #export WORKON_HOME=$HOME/.virtualenvs
