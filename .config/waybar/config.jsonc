@@ -17,6 +17,7 @@
 			"pulseaudio",
 			"cpu",
 			"memory",
+			"custom/gpu-usage",
 			"hyprland/language"
 		],
 		"network": {
@@ -50,5 +51,11 @@
 		"hyprland/language": {
 			"format": "{short}",
 			"tooltip": true
+		},
+		"custom/gpu-usage": {
+			"exec": "cat /sys/class/hwmon/hwmon2/device/gpu_busy_percent",
+			"format": "GPU: {}%",
+			"return-type": "",
+			"interval": 1
 		}
 }

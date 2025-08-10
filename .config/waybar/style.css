@@ -81,6 +81,7 @@ button:hover {
 #clock,
 #battery,
 #cpu,
+#custom-gpu-usage {
 #memory,
 #disk,
 #temperature,
@@ -176,6 +177,10 @@ label:focus {
 
 #memory {
     background-color: #9b59b6;
+}
+
+#custom-gpu-usage {
+		background-color: #df0024;
 }
 
 #disk {
@@ -281,6 +286,7 @@ label:focus {
     margin: 0 5px;
     min-width: 16px;
 }
+
 
 #keyboard-state {
     background: #97e1ad;
