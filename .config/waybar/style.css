@@ -81,7 +81,7 @@ button:hover {
 #clock,
 #battery,
 #cpu,
-#custom-gpu-usage {
+#custom-gpu-usage,
 #memory,
 #disk,
 #temperature,
