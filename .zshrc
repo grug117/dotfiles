@@ -67,8 +67,6 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "`fnm env`"
 fi
-#
-#export OPENAI_KEY=
-#export PATH=$PATH:/usr/local/bin
-#export OPENAI_KEY=
-#export PATH=$PATH:/usr/local/bin
+
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
