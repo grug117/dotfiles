@@ -17,8 +17,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  zsh-autosuggestions
-  npm
+	zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -69,4 +68,4 @@ if [ -d "$FNM_PATH" ]; then
 fi
 
 export DOTNET_ROOT=$HOME/.dotnet
-export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/.cargo/bin:$HOME/.local/bin:/usr/local/go/bin:$(go env GOPATH)/bin"
