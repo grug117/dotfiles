@@ -1,3 +1,11 @@
+# setup
+clone repo to `$HOME/dotfiles`
+```
+cd $HOME/dotfiles
+stow .
+```
+
+
 # List of the things
 - hyprland (window manager)
 - waybar (status bar)
