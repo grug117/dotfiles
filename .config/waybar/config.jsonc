@@ -2,7 +2,7 @@
 {
 	"layer": "top", // Waybar at top layer
 	// "position": "bottom", // Waybar position (top|bottom|left|right)
-	"height": 30, // Waybar height (to be removed for auto height)
+	"height": 25, // Waybar height (to be removed for auto height)
 	// "width": 1280, // Waybar width
 	"spacing": 4, // Gaps between modules (4px)
 	// Choose the order of the modules
@@ -18,12 +18,12 @@
 		"bluetooth",
 		"cpu",
 		"memory",
-		"custom/gpu-usage",
-		"hyprland/language",
+		// "hyprland/language",
 		"battery",
 	],
 	"network": {
 		"rotate": 0,
+		"format-wifi": " {essid}",
 		"format-ethernet": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
 		"tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>",
 		"format-linked": "{ifname} (No IP)",
@@ -37,31 +37,42 @@
 		"warp-on-scroll": false
 	},
 	"clock": {
-		"format": "{:%A %H:%M}"
+		"format": "{:%A %H:%M}",
+		"on-click": "pkill -x waycal || waycal",
+		"tooltip": false,
 	},
 	"pulseaudio": {
-		"format": "VOL: {volume}%",
+		"format": "{icon} {volume}%",
+		"format-bluetooth": "{volume}% {icon}",
+		"format-muted": "",
+		"format-icons": {
+			"alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+			"alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+			"headphone": "",
+			"hands-free": "󰂑",
+			"headset": "󰂑",
+			"phone": "",
+			"phone-muted": "",
+			"portable": "",
+			"car": "",
+			"default": ["", ""]
+		},
+		"scroll-step": 1,
 		"on-click": "pavucontrol"
 	},
 	"cpu": {
-		"format": "CPU: {usage}%",
-		"interval": 2
+		"interval": 1,
+		"format": " {usage}%",
+		"max-length": 10
 	},
 	"memory": {
-		"format": "MEM: {percentage}%"
+		"format": " {percentage}%"
 	},
 	"hyprland/language": {
-		"format": "{short}",
-		"tooltip": true
-	},
-	"custom/gpu-usage": {
-		"exec": "cat /sys/class/hwmon/hwmon2/device/gpu_busy_percent",
-		"format": "GPU: {}%",
-		"return-type": "",
-		"interval": 1
+		"format": "{long}",
 	},
 	"battery": {
-		"format": "{capacity}% {icon}",
+		"format": "{icon} {capacity}%",
 		"format-icons": ["", "", "", "", ""],
 		"max-length": 25
 

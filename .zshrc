@@ -65,3 +65,5 @@ fi
 
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/.cargo/bin:$HOME/.local/bin:/usr/local/go/bin:$(go env GOPATH)/bin
+
+. "$HOME/.local/share/../bin/env"
