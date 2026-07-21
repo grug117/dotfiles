@@ -254,7 +254,7 @@ hl.config({
         kb_options = "",
         kb_rules = "",
         follow_mouse = 1,
-        sensitivity = -0.75,
+        sensitivity = 0,
         -- -1.0 - 1.0, 0 means no modification.
         touchpad = {
             natural_scroll = false,
@@ -268,9 +268,16 @@ hl.config({
 
 -- See https://wiki.hypr.land/Configuring/Keywords/#per-device-input-configs for more
 
+-- thinkpad trackpad
 hl.device({
-    name = "epic-mouse-v1",
-    sensitivity = -0.5,
+    name = "syna8031:00-06cb:d007-touchpad",
+    sensitivity = 0,
+})
+
+-- thinkpad nipple
+hl.device({
+    name = "tpps/2-synaptics-trackpoint",
+    sensitivity = -0.75
 })
 
 --##################
@@ -296,6 +303,12 @@ hl.bind(mainMod .. " + " .. "B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + " .. "V", hl.dsp.window.float())
 hl.bind(mainMod .. " + " .. "P", hl.dsp.window.pseudo())
 
+-- lock
+hl.bind(mainMod .. " + " .. "X", hl.dsp.exec_cmd("hyprlock"))
+
+--screenshot
+hl.bind(mainMod .. " + " .. "PRINT", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
+
 -- dwindle
 hl.bind(mainMod .. " + " .. "S", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + " .. "N", hl.dsp.exec_cmd("swaync-client -t -sw"))
@@ -319,10 +332,10 @@ hl.bind(mainMod .. " + " .. "H", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + " .. "L", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + " .. "K", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + " .. "J", hl.dsp.focus({ direction = "down" }))
---hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "H", { direction = "l" })
---hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "L", { direction = "r" })
---hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "K", { direction = "u" })
---hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "J", { direction = "d" })
+hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "H", hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "L", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "K", hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. " + " .. "SHIFT" .. " + " .. "J", hl.dsp.window.move({ direction = "down" }))
 
 -- Switch workspaces with mainMod + [0-9]
 hl.bind(mainMod .. " + " .. 1, hl.dsp.focus({ workspace = 1 }))
@@ -400,15 +413,6 @@ hl.window_rule({
         fullscreen = 0
     },
     no_focus = true,
-})
-
-hl.window_rule({
-    name = "hide-xwayland-video-bridge",
-    match = {
-        class = "^xwaylandvideobridge$",
-    },
-    no_focus = true,
-    no_blur = true,
 })
 
 -- Autostart
