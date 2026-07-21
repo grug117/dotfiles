@@ -10,29 +10,11 @@ window#waybar {
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
-		margin: 5px
+    margin: 5px
 }
 
 window#waybar.hidden {
     opacity: 0.2;
-}
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
 }
 
 button {
@@ -48,8 +30,6 @@ button:hover {
     background: inherit;
     box-shadow: inset 0 -3px #ffffff;
 }
-
-/* you can set a style on hover for any module like this */
 
 #workspaces button {
     padding: 0 5px;
@@ -120,6 +100,7 @@ button:hover {
 
 #network {
     background-color: #2980b9;
+    color: #ffffff
 }
 
 #pulseaudio {
@@ -144,9 +125,6 @@ button:hover {
 #bluetooth {
     background: #0082FC;
     color: #FFFFFF;
-    padding: 0 5px;
-    margin: 0;
-    min-width: 20px;
 }
 
 #cpu {
