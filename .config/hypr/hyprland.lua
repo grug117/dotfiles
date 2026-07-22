@@ -26,9 +26,7 @@
 -- source = ~/.config/hypr/myColors.conf
 
 --###############
-
 --## MONITORS ###
-
 --###############
 
 -- See https://wiki.hypr.land/Configuring/Monitors/
@@ -72,9 +70,7 @@ hl.bind("switch:off:Lid Switch", function ()
 end, { locked = true })
 
 --##################
-
 --## MY PROGRAMS ###
-
 --##################
 
 -- See https://wiki.hypr.land/Configuring/Keywords/
@@ -224,7 +220,7 @@ hl.config({
         kb_layout = "gb",
         kb_variant = "",
         kb_model = "",
-        kb_options = "",
+        kb_options = "caps:escape,escape:caps",
         kb_rules = "",
         follow_mouse = 1,
         sensitivity = 0,
@@ -234,6 +230,7 @@ hl.config({
         },
     },
 })
+
 
 -- https://wiki.hypr.land/Configuring/Variables/#gestures
 
