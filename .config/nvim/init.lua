@@ -34,9 +34,9 @@ do
 	--  Schedule the setting after `UiEnter` because it can increase startup-time.
 	--  Remove this option if you want your OS clipboard to remain independent.
 	--  See `:help 'clipboard'`
-	vim.schedule(function()
-		vim.o.clipboard = "unnamedplus"
-	end)
+	-- vim.schedule(function()
+	--  vim.o.clipboard = "unnamedplus"
+	-- end)
 
 	-- Enable break indent
 	vim.o.breakindent = true
@@ -734,7 +734,8 @@ do
 		},
 		-- You can also specify external formatters in here.
 		formatters_by_ft = {
-      hcl = { 'tofu fmt' }
+      hcl = { 'tofu fmt' },
+      toml = { 'tombi format' }
 			-- rust = { 'rustfmt' },
 			-- Conform can also run multiple formatters sequentially
 			-- python = { "isort", "black" },
