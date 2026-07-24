@@ -626,7 +626,7 @@ do
 		--    https://github.com/pmizio/typescript-tools.nvim
 		--
 		-- But for many setups, the LSP (`ts_ls`) will work just fine
-		-- ts_ls = {},
+		ts_ls = {},
 
 		stylua = {}, -- Used to format Lua code
 
@@ -787,6 +787,13 @@ do
 			--
 			-- See `:help blink-cmp-config-keymap` for defining your own keymap
 			preset = "enter",
+      ['<Up>'] = { 'select_prev', 'fallback' },
+      ['<Down>'] = { 'select_next', 'fallback' },
+      ['<C-k>'] = { 'select_prev', 'fallback_to_mappings' },
+      ['<C-j>'] = { 'select_next', 'fallback_to_mappings' },
+
+      ['<Tab>'] = { 'snippet_forward', 'fallback' },
+      ['<S-Tab>'] = { 'snippet_backward', 'fallback' }
 
 			-- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
 			--    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -801,7 +808,8 @@ do
 		completion = {
 			-- By default, you may press `<c-space>` to show the documentation.
 			-- Optionally, set `auto_show = true` to show the documentation after a delay.
-			documentation = { auto_show = false, auto_show_delay_ms = 500 },
+			documentation = { auto_show = true, auto_show_delay_ms = 500 },
+      accept = { auto_brackets = { enabled = true } }
 		},
 
 		sources = {
