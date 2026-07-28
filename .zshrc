@@ -44,6 +44,7 @@ alias c="clear"
 alias t="tree -a -I '.git|node_modules|.terraform'"
 alias gbda="git branch --merged | grep -v \* | xargs | xargs git branch -D"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+alias restartwaybar="pkill waybar && nohup waybar >/tmp/waybar.log 2>&1 &"
 
 # initialize and config virtualenvwrapper
 #export PATH="/usr/local/opt/python/libexec/bin:/usr/local/sbin:$PATH"
@@ -65,5 +66,8 @@ fi
 
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/.cargo/bin:$HOME/.local/bin:/usr/local/go/bin:$(go env GOPATH)/bin
+
+# for non sudo local homebrew
+# export PATH=$HOME/homebrew/bin:$PATH
 
 . "$HOME/.local/share/../bin/env"
